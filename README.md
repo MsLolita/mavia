@@ -6,7 +6,7 @@
 ## You need to put:
  1. Put captcha api key for your service in inputs/config.py 
 
-    ![image](https://github.com/MsLolita/mavia/assets/58307006/2370c490-4f11-4ae1-acdc-ff669c747202)
+    ![image](https://github.com/MsLolita/mavia/assets/58307006/2875fb41-d15b-4530-b02e-9dbb43d89d3d)
 
  2. (Optional) Emails in inputs/emails.txt 
 
