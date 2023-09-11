@@ -1,7 +1,7 @@
 # Mavia Waitlist 2.0 Soft
 # Main <crypto/> moves in telegram: [@web3_enjoyer_club](https://t.me/+tdC-PXRzhnczNDli)
 
-## Can change params in inputs/config.py ![image](https://github.com/MsLolita/mavia/assets/58307006/e20bb4bd-fd13-4199-8e30-e4364dac862c)
+## Can change params in inputs/config.py ![image](https://github.com/MsLolita/mavia/assets/58307006/b1db0ea8-2705-4524-8287-cc2ba8153de3)
 
 ## You need to put:
  1. Put captcha api key for your service in inputs/config.py 
