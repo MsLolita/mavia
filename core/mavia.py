@@ -29,7 +29,7 @@ class Mavia(ClientSession):
             'User-Agent': UserAgent().random,
         }
 
-        super().__init__(headers=headers)
+        super().__init__(headers=headers, trust_env=True)
 
         self.email = email
         self.ds_token = ds_token
