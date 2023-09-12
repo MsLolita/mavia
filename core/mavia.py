@@ -22,7 +22,6 @@ class Mavia(ClientSession):
             'accept': 'application/json',
             'accept-language': 'en-US,en;q=0.9',
             'authorization': 'Bearer null',
-            'captcha': 'P1_eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.hKdwYXNza2V5xQR_EGuKYW3EVJR-vgzA3LQR-gJP8xttg4_7IvkBV8eCDaFXlyMpy4uSflDt1pJLooqgfahkvjbytPG9ZMs7-1odGQkUu3Gif92EBUoA18LNsSrmwVIA_Sw2Fyg2394YE3DSl97D6Zf5C6HVz6Ll6fRbQCm-XshO0lVoMRz5C6XtFfC4RqExOT8ovmjEiAONnapDnEc6AJx_JhFfTijqD-PtTOKgXjo9rkcPezeGBkMUrxkRnNUSyeqsGdOIywCxCeyDE6UJLSfDXwFT6mHcirpwYISZwZPyJu-LvwnTS5mvf8rWRPYSdAFS4h45QsCAYWZhwZ7ZtV0wfpx_gDI8ebVIcMo-kXM-JSsK5170TaI2BRzfl8wGiLaXsaRoeC2Zbh53CRoKetAp5olLsB98lUdPCKR7n9QBELQTbqdgfByVqUaHw3g9HcK5-lbVjBcxINgmDwvTSZDA1zKb9765yRI8oWBNypLZCQCTJfIqHx0tAc_Pt8JEk6GeD8BrBwoVleomiIW8wWPB8XppvI6LFC1hScwaau5l7Y745fzaxjTjdw3W27cJ4l97REATDSIjTeFZN62EIiCUlVO77mVAqzAedITJN2PcTLVu1ytDVdOLSMm7flUdlwhTg63q5FURmN6FwWUz9HG-PyB5FQbyOnDy1VZGBOGYK3JbnF2KzH7_UVcGd4m0VNyjsbdOvj_WEjOlOZAzYBJCbEid1REn-vuO_04vwENIAU_V9sBMPtg5xKOJDlcipKiENRQ4wP-fyBFRoGziSr9qeYclyhF0kxS4livnYakfT-KY9DfEEMyUVUASF2oohu5M3FiIP6TnnwWmhGduD-yP-0_1XU9efAQvJ2Lobu7jTaVKj49YuGfHhFVaGFA_5rv_U-vt27N7KlezdekmOA-Jl6FPDIvx-r29SGVFNyomTo0LnJQxefM3Pu1vmfpOUPM4ec4UzScDUsORIQIsNXPv0bgKLpSedFBShrKzR2USqNzsUldB6q4ml92CzQ9WOCHQ35Ow6c414f1i6-UXcdCBivMmaFIC4gj67Cic5Cy8QzFH-kZvv5uC0X3B8JkDa-Myq88ArnyEQOQnBXDupxqTFePStIpEyqF5NPF5m31pse22owf9GD8znjvBm27UKycJvD-v4ZrqvrzcebxEiJeCUfn5YjO_5mUUTg2ydRqgkxhgFjgOjHrWTOb-zLHdFakfLcGPn3D8yHY-NW6TQsDUohsy3NHlz_R_a5MFU3HzD-MAH0cg3C4F1Z-NEjr-cHVRUTEBGGNGc0_0paEUfkDNK6tXOP6Cpvq3s1K1B5H5Pn4JLiiL7DFecESZvh-ChhyE39YfYNEwsleqRd4nw5pPXtUCLQ-yBVlGzdI2QxKxqtpaRi1--0h3-TGkudpOWdrDnUZ_YcBrNMfzz618CxFjtBN8rWIRlmZ8JZkrFGY4sRu75xvAkygC9ZWQxOWOqYYVhFR6uRBH6Qj35eKImLG5HT2-s9Z_bdGowmv5mjFUJy2ifxqE_5QerCF37KJTqEl7zJ435FOBRyWjZXhwzmT-0Wqoc2hhcmRfaWTOFDyEH6JwZAA.zQuypeJI8D4oWbQq7gqtygvei0OcteaVmruvk5SxlQw',
             'content-type': 'application/json',
             'origin': 'https://www.mavia.com',
             'referer': 'https://www.mavia.com/',
@@ -35,10 +34,6 @@ class Mavia(ClientSession):
         self.ds_token = ds_token
 
         self.proxy = None
-        # self.session = requests.Session()
-        #
-        # self.session.headers.update(self.headers)
-        # self.session.proxies.update({'https': self.proxy, 'http': self.proxy})
 
     async def define_proxy(self, proxy: str):
         if MOBILE_PROXY:
