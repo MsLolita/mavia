@@ -77,9 +77,10 @@ class AutoReger:
 
                     await mavia.define_proxy(proxy)
 
-                    resp = await mavia.enter_waitlist()
+                    resp_json = await mavia.enter_waitlist()
+                    logger.debug(resp_json)
                     is_captcha_solved = True
-                    rank = resp.get("waitlist", {}).get("rank")
+                    rank = resp_json.get("waitlist", {}).get("rank")
 
                     if rank is not None:
                         logs["ok"] = True
