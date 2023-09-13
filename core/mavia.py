@@ -20,7 +20,7 @@ class Mavia(ClientSession):
         headers = {
             'authority': 'be.mavia.com',
             'accept': 'application/json',
-            'accept-language': 'en-US,en;q=0.9',
+            'accept-language': 'en-US,en;q=0.5',
             'authorization': 'Bearer null',
             'content-type': 'application/json',
             'origin': 'https://www.mavia.com',
@@ -65,7 +65,7 @@ class Mavia(ClientSession):
             'discordName': ds_username
         }
 
-        async with self.post(url, headers=headers, json=json_data) as resp:
+        async with self.post(url, headers=headers, proxy=self.proxy, json=json_data, ssl=False) as resp:
             return await resp.json()
 
     @staticmethod
