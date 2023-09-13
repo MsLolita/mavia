@@ -67,7 +67,7 @@ class AutoReger:
 
     async def register(self, account: tuple, semaphore: Semaphore):
         email, ds_token, proxy = account
-        user_rank = None
+        logs = {"ok": False, "msg": ""}
 
         try:
             async with semaphore:
@@ -78,17 +78,22 @@ class AutoReger:
 
                     resp = await mavia.enter_waitlist()
 
-                    user_rank = resp.get("waitlist", {}).get("rank")
+                    rank = resp.get("waitlist", {}).get("rank")
+
+                    if rank is not None:
+                        logs["ok"] = True
+                        logs["msg"] = f"Rank: {rank}"
         except Exception as e:
+            logs["msg"] = e
             logger.error(f"Error {e}")
 
         AutoReger.remove_account()
 
-        if user_rank:
-            mavia.logs("success", f"Rank: {user_rank}")
+        if logs["ok"]:
+            mavia.logs("success", logs["msg"])
             self.success += 1
         else:
-            mavia.logs("fail")
+            mavia.logs("fail", logs["msg"])
 
     @staticmethod
     async def custom_delay():
