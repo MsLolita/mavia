@@ -68,6 +68,7 @@ class AutoReger:
     async def register(self, account: tuple, semaphore: Semaphore):
         email, ds_token, proxy = account
         logs = {"ok": False, "msg": ""}
+        is_captcha_solved = False
 
         try:
             async with semaphore:
@@ -77,7 +78,7 @@ class AutoReger:
                     await mavia.define_proxy(proxy)
 
                     resp = await mavia.enter_waitlist()
-
+                    is_captcha_solved = True
                     rank = resp.get("waitlist", {}).get("rank")
 
                     if rank is not None:
@@ -93,6 +94,10 @@ class AutoReger:
             mavia.logs("success", logs["msg"])
             self.success += 1
         else:
+
+            if not is_captcha_solved:
+                logs["msg"] += "Captcha not solved!"
+
             mavia.logs("fail", logs["msg"])
 
     @staticmethod
